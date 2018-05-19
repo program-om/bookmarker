@@ -6,6 +6,10 @@ function saveBookmark(e){
   // Get form values
   var siteName =document.getElementById('siteName').value;
   var siteUrl =document.getElementById('siteUrl').value;
+  
+  if(!siteUrl.includes("http://")){
+    siteUrl = "http://" + siteUrl;
+  }
 
   if(!validateForm(siteName, siteUrl)){
     return false;
